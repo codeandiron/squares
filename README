@@ -1,0 +1,100 @@
+ __     __     __     ______     __  __     ______     ______     __    
+/\ \  _ \ \   /\ \   /\  ___\   /\ \_\ \   /\  __ \   /\  == \   /\ \   
+\ \ \/ ".\ \  \ \ \  \ \___  \  \ \  __ \  \ \  __ \  \ \  __<   \ \ \  
+ \ \__/".~\_\  \ \_\  \/\_____\  \ \_\ \_\  \ \_\ \_\  \ \_____\  \ \_\ 
+  \/_/   \/_/   \/_/   \/_____/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/ 
+                                                                        
+
+Hi there!
+
+Thanks for taking the time to review my work. 
+
+CONTENTS========================================================
+.
+├── build
+├── clean
+├── pom.xml
+├── README
+├── src
+│   ├── main
+│   │   ├── c
+│   │   │   ├── strcpy.h
+│   │   │   ├── strcpyl.c
+│   │   │   ├── strcpyr.c
+│   │   │   └── stringtest.c
+│   │   └── java
+│   │       ├── applet.html
+│   │       └── com
+│   │           └── wishabi
+│   │               ├── AppletDemo.java
+│   │               ├── FrameFullException.java
+│   │               ├── Frame.java
+│   │               ├── SquareComparator.java
+│   │               ├── Square.java
+│   │               └── VersionSorter.java
+│   └── test
+│       └── java
+│           └── com
+│               └── wishabi
+│                   ├── ValidVersionsTest.java
+│                   └── VersionSorterTest.java
+├── target
+│   └── classes
+│       └── com
+│           └── wishabi
+│               ├── AppletDemo.class
+│               ├── Frame.class
+│               ├── Square.class
+│               └── SquareComparator.class
+└── versiontester
+
+
+BUILDING ====================================
+1. Navigate to the root level of the project (with the pom.xml)
+2. Set your CLASSPATH to the src directory for the java files: i.e. "export CLASSPATH=/home/coder/workspace/wishabi/src/main/java"
+3. Set your JAVA_HOME: i.e. "export JAVA_HOME=/usr/java/jdk1.7.0_03"
+4. Ensure that your user has permission to execute the build and clean scripts ("sudo chmod u+x build")
+5. Executing ./build will build all 3 projects, ./clean will remove all non-source files.
+
+
+Version Comparison Question====================================
+1. Execute ./versiontester with any two command line arguments that represent version strings. 
+
+
+Texture Packing Question=======================================
+1. Run the demo of the "texture packing" by typing appletviewer src/main/java/applet.html 
+2. Try resizing the window to see the squares re-placed in the frame. 
+3. It will display "Too Small!" if it can't fit the squares.
+4. Pretty neat problem. There are some interesting heuristic algorithms for this available online, 
+but apparently the space savings can be tiny for a massive increase in complexity.
+
+
+String Copy Question ===========================================
+
+1. To test the recursive implementation of strcpy:
+./src/main/c/stringtestrecursive
+
+2. To test the loop implementation of strcpy:
+./src/main/c/stringtestloop
+
+Answer to the question:
+The strcpy implementations included here are vulnerable to buffer overflow attacks. If the source
+buffer is too large to be accomodated in the destination buffer, parts of the source could be
+written into adjacent memory locations.
+
+These attacks are most dangerous when malignant data is be written to the stack, heap, or other
+important memory locations. This could allow an attacker to (among other things) change the return
+address of the current subroutine. They could redirect the flow of execution to their own code at
+the new address, and gain full control of the computer in this way. This is especially dangerous
+if your application is executing as root, or with certain root capabilities on a unix based system.
+
+Interesting discussion here: https://buildsecurityin.us-cert.gov/bsi-rules/home/g1/848-BSI.html
+
+
+ASSUMPTIONS/NOTES===============================================
+-Normally I would not do things like System.out.println, System.exit(0), or read file input from an absolute path. I promise I would never do anything like that in production potential code. I am also doing zero logging in these applications, purely for the sake of brevity.
+-Normally I would not roll my own Square, Frame class etc. I usually try to use free and open source third party libraries when practical. I stuck to standard JDK available classes because I assume you want to "see what we can do".
+-My build script requires that you have gcc, appletviewer, and javac available on your PATH. I chose not to use Maven because you may not have it installed on this machine.
+
+Thanks again, have a great day!
+Matt Holtom
