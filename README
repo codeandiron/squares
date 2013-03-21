@@ -1,9 +1,8 @@
 
 1. Navigate to the root level of the project (with the pom.xml)
-2. Set your CLASSPATH to the src directory for the java files: i.e. "export CLASSPATH=/home/coder/workspace/wishabi/src/main/java"
+2. Set your CLASSPATH to the src directory for the java files: i.e. "export CLASSPATH=/home/coder/workspace/squares/src/main/java"
 3. Set your JAVA_HOME: i.e. "export JAVA_HOME=/usr/java/jdk1.7.0_03"
 4. Ensure that your user has permission to execute the build and clean scripts ("sudo chmod u+x build")
-5. Executing ./build will build all 3 projects, ./clean will remove all non-source files.
 
 Texture Packing Question=======================================
 1. Run the demo of the "texture packing" by typing appletviewer src/main/java/applet.html 
