@@ -1,4 +1,4 @@
-package com.wishabi;
+package com.squares;
 
 import java.util.Comparator;
 

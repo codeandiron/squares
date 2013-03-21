@@ -1,4 +1,4 @@
-package com.wishabi;
+package com.squares;
 
 public class FrameFullException extends Exception {
 	
