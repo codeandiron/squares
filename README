@@ -1,11 +1,20 @@
+  ______ _______ _     _ _______ ______  _______  ______ 
+ / _____|_______|_)   (_|_______|_____ \(_______)/ _____)
+( (____  _    _  _     _ _______ _____) )_____  ( (____  
+ \____ \| |  | || |   | |  ___  |  __  /|  ___)  \____ \ 
+ _____) ) |__| || |___| | |   | | |  \ \| |_____ _____) )
+(______/ \______)\_____/|_|   |_|_|   |_|_______|______/ 
 
+                                                        
+SETUP ========================================================= 
 1. Navigate to the root level of the project (with the pom.xml)
-2. Set your CLASSPATH to the src directory for the java files: i.e. "export CLASSPATH=/home/coder/workspace/squares/src/main/java"
-3. Set your JAVA_HOME: i.e. "export JAVA_HOME=/usr/java/jdk1.7.0_03"
+2. Build with Maven: "mvn package"
+3. Set your $CLASSPATH (absolutely) to the target directory for the java classes: i.e. "export CLASSPATH=/home/coder/workspace/squares/target/classes"
+4. Set your $JAVA_HOME: "export JAVA_HOME=/usr/java/jdk1.7.0_03"
 
-Texture Packing Question=======================================
-1. Run the demo of the "texture packing" by typing appletviewer src/main/java/applet.html 
+
+Running the Demo==============================================
+1. Run the applet with: "appletviewer target/classes/applet.html"
 2. Try resizing the window to see the squares re-placed in the frame. 
 3. It will display "Too Small!" if it can't fit the squares.
-4. Pretty neat problem. There are some interesting heuristic algorithms for this available online, 
-but apparently the space savings can be tiny for a massive increase in complexity.
+4. Pretty neat problem. There are some interesting heuristic algorithms for this available online, but apparently the space savings can be tiny for a massive increase in complexity. People have written their thesis on this shit apparently. Google "texture packing algorithms" for more info. There's a story on their about a guy spending 4 months on the pproblem for a 3% improvement! Yikes.
