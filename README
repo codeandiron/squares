@@ -16,5 +16,5 @@ SETUP =========================================================
 Running the Demo==============================================
 1. Run the applet with: "appletviewer target/classes/applet.html"
 2. Try resizing the window to see the squares re-placed in the frame. 
-3. It will display "Too Small!" if it can't fit the squares.
+3. Try changing the number and sizes of squares in the code to see different layouts.
 4. Pretty neat problem. There are some interesting heuristic algorithms for this available online, but apparently the space savings can be tiny for a massive increase in complexity. People have written their thesis on this shit apparently. Google "texture packing algorithms" for more info. There's a story on their about a guy spending 4 months on the pproblem for a 3% improvement! Yikes.
